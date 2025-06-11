@@ -1,0 +1,301 @@
+\documentclass[a4paper,12pt=]{article}
+
+\usepackage[left=0.5in, right=0.5in, top=1in, bottom=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[colorlinks=true, urlcolor=blue]{hyperref}
+\usepackage{enumitem}
+\usepackage{amsmath, amssymb}
+\usepackage{xurl}
+
+\title {\textbf{Internship Report - Computational Materials}}
+\author{\textbf{Hasitha S}\\
+\small{B.E Materials Science and Engineering}\\
+\small{College of Engineering, Guindy}}
+\date{\today} 
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+This report summarizes what I learned during my internship in computational materials science, including Linux system commands, Python, SageMath, and LaTeX documentation using \textit{Overleaf}.
+
+\begin{center}
+ \includegraphics[width=2.5cm]{IMAGES/linux-logo-png_seeklogo-482333.png} \hspace{0.5cm}
+\includegraphics[width=5cm]{IMAGES/Python-Logo.jpg} \hspace{0.5cm}
+\includegraphics[width=2.5cm]{IMAGES/CoAviUnx_400x400.png} \hspace{0.5cm}
+\includegraphics[width=5cm]{IMAGES/overleaf-logo-primary.jpg} \hspace{0.5cm}
+\end{center}
+
+\rule{\linewidth}{0.1pt}
+
+
+\section{Linux System Commands}
+
+ I explored a wide range of Linux terminal commands and features relevant to computational tasks. These are grouped into several categories:
+\subsection{Basic File and Directory Commands}
+
+    \begin{itemize}
+    
+        \item \texttt{pwd} – Print the current working directory
+        \item \texttt{cd} – Change the current directory
+        \item \texttt{ls} – List the files and directories in the current location
+        \item \texttt{mkdir} – Create a new directory
+        \item \texttt{mv} - Move files or rename
+        \item \texttt{rm} – Remove files or directories
+    
+        \item \texttt{ls} – lists folder contents
+        \item \texttt{ls -l} – shows extended details (permissions, size, etc.)
+        \item \texttt{ls -ld} – shows info about the directory itself, not its contents
+        \item \texttt{ls -li} – includes inode numbers
+        \item \texttt{ls -lid <directory>} – inode info for a specific directory
+        \item \texttt{less} - to read files and quit
+        \item \texttt{cat} - concatenate text to page
+        \item \texttt{wc} - wordcount
+         \item Handling of file and directory permissions using \texttt{ chmod} 
+        \item Other tools like \texttt{cal},\texttt{date}
+    \end{itemize}
+
+\subsection{File Description and System Info}
+    \begin{itemize}
+        \item \texttt{file} – Determine the type of a file
+        \item \texttt{stat} – Display detailed information about a file, including size and permissions
+        \item \texttt{du} – Estimate file space usage (disk usage)
+        \item \texttt{free} – Show available and used memory on the system
+        \item \texttt{groups} – Show the groups a user belongs to
+    
+        \item \texttt{man} – View the manual page for a command
+        \item \texttt{help} – Display help for shell built-in commands
+        \item \texttt{which} – Show the full path of a command
+        \item \texttt{whatis} – Give a one-line description of a command
+        \item \texttt{apropos} – Search the manual page names and descriptions for a keyword
+        \item \texttt{/proc} – Contains information about running processes and system details (like CPU and memory)
+        \item \texttt{/sys} – Shows details about hardware devices and kernel settings
+    \end{itemize}
+
+\subsection{Shell Variables}
+    \begin{itemize}
+        \item \texttt{echo} – Prints text or variable values to the terminal; use double quotes for spacing and special characters
+        \item \texttt{\$USER}, \texttt{\$HOME}, \texttt{\$HOSTNAME} – Environment variables that show your username, home directory, and machine name
+        \item \texttt{\textbackslash} – Escape character used to prevent interpretation (e.g., to avoid alias effects)
+        \item \texttt{printenv}, \texttt{print} – Display a list of all environment variables
+        \item \texttt{set} – Shows all shell variables and functions
+        \item \texttt{\$0} – Shows the name of the shell or script being executed
+        \item \texttt{\$\$} – Displays the process ID (PID) of the current shell
+        \item \texttt{ps} – Shows currently running processes
+        \item \texttt{ps --forest} – Displays processes in a tree format to show parent–child relationships
+        \item \texttt{ps -ef} – Lists every process on the system in full detail
+        \item \texttt{ps -f}, \texttt{ps -e} – Show detailed info about running processes
+    \end{itemize}
+
+\subsection{Combining Commands and File Operations}
+    \begin{itemize}
+        \item \texttt{;} – Used to run multiple commands in a row
+        \item \texttt{()} – Creates a subshell where commands are run in a separate environment
+        \item \texttt{\$BASH\_SUBSHELL} – Shows how many subshells deep the current shell is
+    
+        \item \texttt{\&\&} – Runs the second command only if the first one succeeds
+        \item \texttt{||} – Runs the second command only if the first one fails
+    
+        \item \textbf{File Descriptors:}
+        \begin{itemize}
+            \item \texttt{0} – \texttt{stdin}, standard input
+            \item \texttt{1} – \texttt{stdout}, standard output
+            \item \texttt{2} – \texttt{stderr}, standard error
+        \end{itemize}
+    
+        \item \texttt{command > filename} – Redirects output to a file (overwrites if file exists)
+        \item \texttt{command >> filename} – Appends output to a file
+        \item \texttt{command 2> filename} – Redirects error messages to a file
+        \item \texttt{command > filename 2>\&1} – Redirects both output and errors to the same file
+    
+        \item \texttt{< filename} – Takes input from a file instead of typing it manually
+        \item \texttt{cat > filename} – Lets you type content into a file (use \texttt{Ctrl+D} to stop)
+    
+        \item \texttt{|} – Pipe operator; sends the output of one command as input to another
+    
+        \item \texttt{/dev/null} – Special file that discards everything sent to it (useful to ignore output or errors)
+    
+        \item \texttt{command | tee filename} - Displays the output and also writes it to one or more files.
+    
+        \item \texttt{diff file1 file2} – Compares two files and shows differences
+    \end{itemize}
+
+\subsection{Linux Process Management}
+    \begin{itemize}
+        \item \texttt{coproc}Launches a process in the background.
+        \item \texttt{sleep 30 \&} – Runs a process in the background using \texttt{\&}.
+        \item \texttt{fg} – Brings a background job to the foreground.
+        \item \texttt{ctrl + c} – Terminates the current foreground process.
+        \item \texttt{kill <PID>} – Ends a background process using its process ID.
+        \item \texttt{jobs} – Lists current background jobs in the shell.
+        \item \texttt{help} – Displays help for shell built-in commands (useful instead of \texttt{man}).
+        \item \texttt{echo \$-} – Shows current shell options/features.
+        \item \texttt{bash -c "echo \$-"} – Creates a new shell and displays its options.
+    \end{itemize}
+   
+\subsection{Pattern Matching with \texttt{grep} and \texttt{egrep}}
+    \begin{itemize}
+       \item \texttt{grep <pattern> <filename>} – Searches for a pattern in a file using basic regular expressions.
+        \item \texttt{egrep} – Uses extended regular expressions (ERE) for more complex patterns.
+    \end{itemize}
+    
+\textbf{Common Pattern Matching Symbols:}
+    \begin{itemize}
+        \item \texttt{.} : Matches any single character.
+        \item \texttt{*} : Matches zero or more of the preceding character.
+        \item \texttt{[ ]} : Matches any one character in the set or range.
+        \item \texttt{[\^{}]} : Matches any character not in the set.
+        \item \texttt{\^{}} : Matches beginning
+        \item \texttt{\$} : Matches ending
+        \item \texttt{\textbackslash} : Escapes special characters.
+        \item \texttt{\{n,m\}} : Matches between \texttt{n} and \texttt{m} repetitions of the preceding character.
+        \item \texttt{()} : Groups expressions for repeated matches.
+        \item \texttt{+} : Matches one or more of the preceding pattern.
+        \item \texttt{?} : Matches zero or one occurrence of the preceding pattern.
+        \item \texttt{|} : Acts as OR between patterns.
+        \item \texttt{\string\b} : Matches a word boundary.
+\end{itemize}
+
+\subsection{Command Line Editors}
+    \begin{itemize}
+        \item \texttt{ED}
+            \begin{itemize}
+                \item \texttt{ed filename} : Opens the file
+                \item \texttt{P} : Enable prompt.
+                \item \texttt{2} : Refers to second line, \texttt{.} current line, \texttt{\$} last line.
+                \item \texttt{d} : Delete line.
+                \item \texttt{f} : Display file name.
+                \item \texttt{\%} : Refers to all lines.
+                \item \texttt{+} / \texttt{-} : Next or previous line.
+                \item \texttt{;} : Range from current line to end.
+                \item \texttt{/RE/} : Search using regular expression.
+                \item \texttt{,p} : Print entire content.
+                \item \texttt{a} : Append text (exit with single \texttt{.} on a new line).
+                \item \texttt{s/old/new/} : Substitute text.
+                \item \texttt{2,3j} : Join lines 2 and 3.
+                \item \texttt{m1} : Move current line to first position.
+                \item \texttt{\%s/\textbackslash(.*\textbackslash)/PREFIX\textbackslash1/} : Add prefix to all lines.
+                \item \texttt{!command} : Execute shell command.
+                \item \texttt{e filename} : Edit another file.
+                \item \texttt{r filename} : Read file contents into buffer.
+                \item \texttt{r !command} : Read command output into buffer.
+                \item \texttt{w filename} : Write buffer to file.
+                \item \texttt{q} : Quit.
+            \end{itemize}
+        \item \textbf{VI}
+        \begin{itemize}
+            \item \textbf{Modes:}
+            \begin{itemize}
+                \item \textbf{Command mode}
+                \item \textbf{Insert mode}
+                    \begin{itemize}
+                        \item \texttt{i} : Insert at cursor.
+                        \item \texttt{o} : Insert new line below.
+                        \item \texttt{a} : Append after cursor.
+                    \end{itemize}
+            \item \textbf{Ex mode}
+                \begin{itemize}
+                    \item \texttt{:w} : Write file.
+                    \item \texttt{:q} : Quit.
+                    \item \texttt{:wq} or \texttt{:x} : Save and quit.
+                    \item \texttt{:q!} : Quit without saving.
+                    \item \texttt{hjkl} : Move cursor (left, down, up, right).
+                    \item \texttt{:1s/old/new/} : Substitute in first line.
+                    \item \texttt{r} : Replace single character.
+                    \item \texttt{R} : Replace continuously until \texttt{Esc}
+                \end{itemize}
+            
+            \end{itemize}
+        \end{itemize}
+        
+    \end{itemize}
+
+\rule{\linewidth}{0.1pt}
+
+\section{Python}
+
+I explored various practical aspects of Python. I have organized my work into Jupyter notebooks, each covering a specific topic. These notebooks are hosted on my GitHub repository and can be accessed through the links provided below for each section.
+
+   \begin{itemize}
+        \item \textbf{Basics of Python} 
+        \\ \url{https://github.com/Hasitha1405/computational-materials-internship/blob/main/Python/1.Basics.ipynb}
+    
+        \item \textbf{2D Visualization of Data}
+        \\ \url{https://github.com/Hasitha1405/computational-materials-internship/blob/main/Python/2.2D%20visualization%20of%20data.ipynb}
+
+        \item \textbf{Arrays from numpy, fitting polynomials and user defined functions to data}
+        \\
+        \url{https://github.com/Hasitha1405/computational-materials-internship/blob/main/Python/3.Arrays%20from%20numpy%2C%20fitting%20polynomials%20and%20user%20defined%20functions%20to%20data.ipynb}
+
+        \item \textbf{Binning of large arrays, Parametric plots}
+        \\ \url{https://github.com/Hasitha1405/computational-materials-internship/blob/main/Python/4.Binning%20of%20large%20arrays%2C%20Parametric%20plots.ipynb}
+
+        \item \textbf{Linear Algebra, Array representation}
+        \\ \url{https://github.com/Hasitha1405/computational-materials-internship/blob/main/Python/5.Linear%20Algebra%2C%20Array%20representation.ipynb}
+
+
+    \end{itemize} 
+
+\rule{\linewidth}{0.1pt}
+
+
+\section{SageMath}
+In addition to Python, I also worked with SageMath—an open-source mathematics software system, especially useful for symbolic computation, algebra, calculus, number theory, and data visualization. \\I used SageMath primarily through Jupyter notebooks to perform mathematical operations and visualize results. Relevant SageMath notebooks are also linked below for reference.
+
+\begin{itemize}
+    \item \textbf{Introduction to symbolic computation using sage expressions}
+    \\ \url{https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/1.Introduction%20to%20symbolic%20computation%20using%20sage%20expressions.ipynb}
+
+    \item \textbf{Manipulation of symbolic expressions}
+    \\ \url{https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/2.Manipulation%20of%20symbolic%20expressions.ipynb}
+
+    \item \textbf{Symbolic differentiation}
+    \\ \url{https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/3.Symbolic%20differentiation.ipynb}
+
+    \item \textbf{Symbolic Integration}
+    \\ \url{https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/4.Symbolic%20Integration.ipynb}
+
+    \item \textbf{LaTeX symbols}
+    \\ \url{https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/5.LaTeX%20symbols.ipynb}
+    
+    \item \textbf{Integers}
+    \\ \url{https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/6.Integers.ipynb}
+    
+    \item \textbf{Real Number}
+    \\ \url{https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/7.Real%20Numbers.ipynb}
+    
+    \item \textbf{Rational Number}
+    \\ \url{https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/8.Rational%20Numbers.ipynb}
+    
+    \item \textbf{Complex numbers}
+    \\ \url{https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/9.Complex%20numbers.ipynb}
+    
+    
+\end{itemize}
+\rule{\linewidth}{0.1pt}
+
+\section{LaTeX Documentation}
+ I also learned to use \LaTeX{}, a powerful typesetting system commonly used in academia for writing technical and scientific documents. \\I used \LaTeX{} to compile and format this report and became familiar with its key features such as:
+
+\begin{itemize}
+    \item Creating sections, subsections, and structured content
+    \item Formatting text (bold, italics, underline)
+    \item Adding bullet points and numbered lists
+    \item Writing and aligning mathematical expressions
+    \item Inserting images and controlling their size and position
+    \item Adding hyperlinks and URLs using the \texttt{hyperref} package
+    \item Referencing sections, figures, and equations
+    \item Altering line spacing and adjusting margins using packages like \texttt{geometry}
+    \item Customizing page layout, borders, and alignment
+    \item Handling special characters and escape sequences
+\end{itemize}
+\rule{\linewidth}{0.1pt}
+
+\section{Conclusion}
+I gained practical exposure to a wide range of tools essential for computational materials science. \\I explored the Linux command line for efficient system navigation, created and executed Bash scripts, worked with Python for data visualization and analysis, and used SageMath for symbolic and numerical computation. In addition, I learned to document my work professionally using \LaTeX{}. \\ \\This experience has strengthened my technical foundation and improved my ability to approach problems systematically using computational tools.
+
+
+\end{document}
