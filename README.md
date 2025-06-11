@@ -1,4 +1,4 @@
-#Computational Materials Internship
+# Computational Materials Internship
 This repository contains the tasks and notes from my internship.  
 Each section is linked to a Jupyter Notebook on GitHub.
 
@@ -18,16 +18,16 @@ Each section is linked to a Jupyter Notebook on GitHub.
  - [Linear Algebra, Array representation](https://github.com/Hasitha1405/computational-materials-internship/blob/main/Python/5.Linear%20Algebra%2C%20Array%20representation.ipynb)
 
 ##📐 SageMath
- -[Introduction to symbolic computation using sage expressions](https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/1.Introduction%20to%20symbolic%20computation%20using%20sage%20expressions.ipynb)
- -[Manipulation of symbolic expressions](https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/2.Manipulation%20of%20symbolic%20expressions.ipynb)
- -[Symbolic differentiation](https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/3.Symbolic%20differentiation.ipynb)
- -[Symbolic Integration](https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/4.Symbolic%20Integration.ipynb)
- -[LaTeX symbols](https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/5.LaTeX%20symbols.ipynb)
- -[Integers](https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/6.Integers.ipynb)
- -[Real Numbers](https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/7.Real%20Numbers.ipynb)
- -[Rational Numbers](https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/8.Rational%20Numbers.ipynb)
- -[Complex numbers](https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/9.Complex%20numbers.ipynb)
+ - [Introduction to symbolic computation using sage expressions](https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/1.Introduction%20to%20symbolic%20computation%20using%20sage%20expressions.ipynb)
+ - [Manipulation of symbolic expressions](https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/2.Manipulation%20of%20symbolic%20expressions.ipynb)
+ - [Symbolic differentiation](https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/3.Symbolic%20differentiation.ipynb)
+ - [Symbolic Integration](https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/4.Symbolic%20Integration.ipynb)
+ - [LaTeX symbols](https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/5.LaTeX%20symbols.ipynb)
+ - [Integers](https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/6.Integers.ipynb)
+ - [Real Numbers](https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/7.Real%20Numbers.ipynb)
+ - [Rational Numbers](https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/8.Rational%20Numbers.ipynb)
+ - [Complex numbers](https://github.com/Hasitha1405/computational-materials-internship/blob/main/SageMath/9.Complex%20numbers.ipynb)
 
  ##📄 LaTeX
- -[Report using LaTeX](https://github.com/Hasitha1405/computational-materials-internship/blob/main/LaTeX/Internship%20Report%20using%20LaTeX.pdf)
- -[LaTeX code](https://github.com/Hasitha1405/computational-materials-internship/blob/main/LaTeX/latex%20code.tex)
+ - [Report using LaTeX](https://github.com/Hasitha1405/computational-materials-internship/blob/main/LaTeX/Internship%20Report%20using%20LaTeX.pdf)
+ - [LaTeX code](https://github.com/Hasitha1405/computational-materials-internship/blob/main/LaTeX/latex%20code.tex)
