@@ -2,6 +2,8 @@
 This repository contains the tasks and notes from my internship.  
 Each section is linked to a Jupyter Notebook on GitHub.
 
+As part of my learning, I also implemented the Linear Planar model using Python, which is linked below.
+
 ## What I Learned ✅
 
 - 📂 Linux System Commands and Shell Scripting
@@ -9,6 +11,11 @@ Each section is linked to a Jupyter Notebook on GitHub.
 - 📊 Data Visualization using Matplotlib
 - 📐 Symbolic computation using SageMath
 - 📄 Document creation and formatting with LaTeX
+
+## Linear Planar Model for Solidification 📈
+ - [Python code](https://github.com/Hasitha1405/computational-materials-internship/blob/main/LINEAR%20PLANAR%20MODEL/code.ipynb)
+ - [Plot](https://github.com/Hasitha1405/computational-materials-internship/blob/main/LINEAR%20PLANAR%20MODEL/Plot.png)
+ - [LaTeX Report](https://github.com/Hasitha1405/computational-materials-internship/tree/main/LaTeX)
 
 ## Python 🐍
  - [Basics](https://github.com/Hasitha1405/computational-materials-internship/blob/main/Python/1.Basics.ipynb)
