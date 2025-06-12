@@ -15,8 +15,7 @@ As part of my learning, I also implemented the Linear Planar model using Python,
 ## Linear Planar Model for Solidification 📈
  - [Python code](https://github.com/Hasitha1405/computational-materials-internship/blob/main/LINEAR%20PLANAR%20MODEL/code.ipynb)
  - [Plot](https://github.com/Hasitha1405/computational-materials-internship/blob/main/LINEAR%20PLANAR%20MODEL/Plot.png)
- - [LaTeX Report](https://github.com/Hasitha1405/computational-materials-internship/tree/main/LINEAR%20PLANAR%20MODEL/Report%20using%20LaTeX)
-
+ - [LaTeX Report](https://github.com/Hasitha1405/computational-materials-internship/blob/main/LINEAR%20PLANAR%20MODEL/Report%20using%20LaTeX/Linear%20Planar%20Model%20report.pdf)
 ## Python 🐍
  - [Basics](https://github.com/Hasitha1405/computational-materials-internship/blob/main/Python/1.Basics.ipynb)
  - [2D Visualization of Data](https://github.com/Hasitha1405/computational-materials-internship/blob/main/Python/2.2D%20visualization%20of%20data.ipynb)
