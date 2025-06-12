@@ -1,0 +1,104 @@
+\documentclass{article}
+
+\usepackage[margins=0.75in]{geometry}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[colorlinks=true, urlcolor=blue]{hyperref}
+\usepackage{enumitem}
+\usepackage{amsmath, amssymb}
+\usepackage{xurl}
+
+\title{\textbf{Linear Planar Model for Solidification}}
+\author{\textbf{Hasitha S}\\ 
+        \small{B.E Materials Science and Engineering}\\ 
+        \small{College of Engineering Guindy} }
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+The Linear Planar IRF model is used to understand how the temperature at the solid-liquid interface of an alloy changes with solidification velocity. It's particularly useful for analyzing rapid solidification processes in metallurgy and materials science.
+\\ \\As the solidification velocity increases, solute trapping and kinetic effects alter the behavior of the alloy, making it deviate from equilibrium. This model helps predict the interface temperature under such non-equilibrium conditions, especially for multicomponent alloys.
+
+\section{Objective}
+In this project, I implemented the Linear Planar Interface Response Function (IRF) model using Python. The aim was to simulate how the temperature at the solid-liquid interface changes with different solidification velocities in a multi-component alloy system.
+\\ \\The model uses a set of thermophysical parameters provided in a .json input file and calculates the non-equilibrium interface temperature across a range of velocities. These values are then plotted to visualize how the interface responds during solidification.
+\\ \\By doing this, I gained hands-on experience in:
+
+\begin{itemize}
+    \item Extracting and using data from \texttt{JSON} files,
+    \item Performing scientific computations using \texttt{NumPy}
+    \item Visualizing physical behavior using \texttt{Matplotlib}
+    \item Understanding the role of each material property in solidification
+\end{itemize}
+
+\section{Inputs and Outputs}
+\subsection{Inputs}
+The model requires the following parameters, usually provided via a JSON input file:
+
+\begin{itemize}
+    \item \textbf{Solutes}: List of solute elements
+    \item \textbf{Alloy Composition}: Mole fraction of each solute in the alloy
+    \item \textbf{Equilibrium Partition Coefficient}: Ratio of solute concentration in solid to liquid under equilibrium
+    \item \textbf{Equilibrium Liquidus Slope}: Slope of the liquidus line in a phase diagram
+    \item \textbf{Solvent Melting Point}: Melting point of the base alloy
+    \item \textbf{Kinetic Coefficien}t: Controls kinetic undercooling with velocity
+    \item \textbf{Interface Diffusive Speed}: Affects how much the actual partitioning deviates from equilibrium
+    \item \textbf{Minimum Velocity}
+    \item \textbf{Maximum Velocity}
+    \item \textbf{Velocity Step}
+\end{itemize}
+
+\subsection{Outputs}
+For each velocity, the model computes:
+\begin{itemize}
+    \item \textbf{Solidification velocity} (m/s):
+    \item \textbf{Interface temperature} $T$ (K)
+    \item \textbf{Non-equilibrium partition coefficient} $k_v$ (for each solute)
+    \item \textbf{Non-equilibrium liquidus slope} $m_v$ (for each solute)
+\end{itemize}
+
+\section{Python process flow}
+\begin{enumerate}
+    \item \textbf{Import Required Libraries}
+
+     We use \verb|json| to read input, \verb|numpy| for numerical operations, and \verb|matplotlib| for plotting. 
+
+     \item \textbf{Read Input JSON File}
+
+     The file \verb|Planar_H13_delta.json| is opened, and its contents are converted into a Python dictionary using \verb|json.loads()|. 
+
+     \item \textbf{Extract Input Values}
+     The dictionary keys are used to extract solutes, composition values, equilibrium parameters, and velocity limits.
+
+     \item \textbf{Define get\_mv function}
+     \\This function calculates the non-equilibrium liquidus slope (mv) using the formula:
+        $$
+        m_v = \frac{m_e}{1 - k_e} \left( 1 - k_v \left( 1 - \ln\left(\frac{k_v}{k_e}\right) \right) \right)
+        $$
+    \item \textbf{Loop Over Velocities}
+    \\Starting from \texttt{vmin}, we loop up to \texttt{vmax} in steps of \texttt{vstep} (with smaller steps after 1 m/s). \\For each velocity:
+        \begin{itemize}
+            \item Calculate \texttt{$k_v$}
+                
+                $$k_v=\frac{k_e+\frac{v}{v_{di}}}{1+\frac{v}{v_{di}}}$$
+            
+            \item Use \texttt{$k_v$} to get \texttt{$m_v$}
+            \item Compute interface temperature \texttt{$T$}
+
+                $$T=T_m+ \sum m_v \cdot c_{o}-\frac{v}{\mu_k}$$
+            
+            \item Print all values
+        \end{itemize}
+    \item \textbf{Plot Results}
+    \\A plot of Temperature vs Velocity is generated, with a logarithmic scale on the velocity axis.
+
+    \includegraphics[width=4.5in]{Screenshot 2025-06-12 124811.png}
+
+\section{Conclusion}
+Through this task, I learned how to use \texttt{Python} to implement the Linear Planar IRF model, extract inputs from a \texttt{JSON} file, perform numerical calculations with \texttt{NumPy}, and create plots using \texttt{Matplotlib}. 
+    
+\end{enumerate}
+\end{document}
