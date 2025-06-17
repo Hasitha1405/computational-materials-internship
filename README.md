@@ -24,7 +24,9 @@ As part of my learning, I also implemented the Linear Planar model using Python,
  - [Filling file](https://github.com/Hasitha1405/computational-materials-internship/blob/main/MicroSim/Filling.in)
  - [vtk files](https://github.com/Hasitha1405/computational-materials-internship/tree/main/MicroSim/vtk%20files)
  - [Output Images](https://github.com/Hasitha1405/computational-materials-internship/tree/main/MicroSim/images)
- - [LaTeX report](https://github.com/Hasitha1405/computational-materials-internship/blob/main/MicroSim/Microsim%20Report.pdf)
+ - [GIF](https://github.com/Hasitha1405/computational-materials-internship/blob/main/MicroSim/output.gif)
+ - [LaTeX report](https://github.com/Hasitha1405/computational-materials-internship/blob/main/MicroSim/output.gif)
+ - 
 ## Python 🐍
  - [Basics](https://github.com/Hasitha1405/computational-materials-internship/blob/main/Python/1.Basics.ipynb)
  - [2D Visualization of Data](https://github.com/Hasitha1405/computational-materials-internship/blob/main/Python/2.2D%20visualization%20of%20data.ipynb)
