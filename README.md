@@ -2,7 +2,7 @@
 This repository contains the tasks and notes from my internship.  
 Each section is linked to a Jupyter Notebook on GitHub.
 
-As part of my learning, I also implemented the Linear Planar model using Python, which is linked below.
+As part of my learning, I also implemented the Linear Planar model using Python, and Phase-Field modeling in Microsim.
 
 ## What I Learned ✅
 
