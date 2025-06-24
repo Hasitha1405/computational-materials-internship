@@ -11,7 +11,7 @@ As part of my learning, I also implemented the Linear Planar model using Python,
 - 📊 Data Visualization using Matplotlib
 - 📐 Symbolic computation using SageMath
 - 📄 Document creation and formatting with LaTeX
-- 🧿 Phase-Field modelling in MicroSim
+- 🧿 Phase-Field modelling in MicroSim (and Visualization with ParaView)
 
 ## Linear Planar Model for Solidification 📈
  - [Python code](https://github.com/Hasitha1405/computational-materials-internship/blob/main/LINEAR%20PLANAR%20MODEL/code.ipynb)
@@ -26,7 +26,7 @@ As part of my learning, I also implemented the Linear Planar model using Python,
  - [Output Images](https://github.com/Hasitha1405/computational-materials-internship/tree/main/MicroSim/images)
  - [GIF](https://github.com/Hasitha1405/computational-materials-internship/blob/main/MicroSim/output.gif)
  - [LaTeX report](https://github.com/Hasitha1405/computational-materials-internship/blob/main/MicroSim/Microsim%20Report.pdf)
- - 
+   
 ## Python 🐍
  - [Basics](https://github.com/Hasitha1405/computational-materials-internship/blob/main/Python/1.Basics.ipynb)
  - [2D Visualization of Data](https://github.com/Hasitha1405/computational-materials-internship/blob/main/Python/2.2D%20visualization%20of%20data.ipynb)
